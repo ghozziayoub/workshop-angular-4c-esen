@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<p>Welcome To {{title}}</p>
+<div *ngIf="products.length==0" class="alert alert-warning">Aucun produit trouvé</div>
+<table *ngIf="products.length>0" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product}}</td>
+            <td><button class="btn btn-danger" (click)="deleteProduct(product)">delete</button></td>
+        </tr>
+    </tbody>
+</table>
